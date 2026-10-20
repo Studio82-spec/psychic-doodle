@@ -1,0 +1,9 @@
+/* EMBER color rules: Dark Roast orange; Decaf and Lions Mane blue. */
+.ember-page { --ember-orange: #e8783d; --ember-blue: #65a4d5; }
+.ember-page > header { width: min(1100px, 90%); }
+.ember-page .detail-item > span { color: var(--ember-blue); }
+.ember-page .ember-orange { color: var(--ember-orange); }
+.ember-page .ember-blue { color: var(--ember-blue); }
+@media (max-width: 650px) {
+    .ember-page .project-hero h1 { font-size: clamp(48px, 16vw, 96px); }
+}

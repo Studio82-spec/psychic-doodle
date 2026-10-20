@@ -1,0 +1,35 @@
+/* Website portfolio additions; existing site styles and navigation retained. */
+.projects .website-project-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); min-height: 0; }
+.website-project-card .project-card-image { aspect-ratio: auto; height: auto; min-width: 0; align-self: center; }
+.website-project-card .project-card-image img { height: auto; }
+.website-project-card .project-card-image a { display: block; height: 100%; }
+.website-project-card .project-card-content { justify-content: center; padding: clamp(28px, 4vw, 56px); }
+.website-project-card .project-type { margin-bottom: 18px; }
+.website-project-card .project-card-link { margin-top: 28px; }
+.nh-page .nh-hero { padding-top: clamp(55px, 8vw, 110px); }
+.nh-page h1 { font-size: clamp(42px, 9vw, 128px); line-height: 1.05; letter-spacing: -.045em; margin: 0 0 28px; }
+.nh-page .nh-deck { color: #bfbfbf; font-size: clamp(24px, 3.5vw, 40px); line-height: 1.4; }
+.nh-page .nh-meta { display: flex; flex-wrap: wrap; gap: 28px 64px; border-block: 1px solid #303030; padding: 30px 0; margin: 44px 0; }
+.nh-meta dt { color: #999; font-size: 11px; letter-spacing: 2px; margin-bottom: 10px; }
+.nh-meta dd { margin: 0; line-height: 1.6; font-size: 14px; }
+.nh-page .nh-screen { margin: 0; }
+.nh-screen img { display: block; width: 100%; height: auto; border: 1px solid #303830; border-radius: 12px; }
+.nh-screen figcaption { color: #aaa; font-size: 14px; line-height: 1.6; padding-top: 18px; }
+.nh-page .nh-section { padding-top: clamp(48px, 7vw, 90px); padding-bottom: clamp(48px, 7vw, 90px); }
+.nh-page h2 { font-size: clamp(30px, 4.5vw, 54px); line-height: 1.12; letter-spacing: -1.5px; }
+.nh-page .nh-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 6vw, 80px); }
+.nh-copy p { font-size: 18px; line-height: 1.8; color: #bfbfbf; margin: 0 0 22px; }
+.nh-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin: 44px 0 56px; }
+.nh-details article { border-top: 1px solid #383838; padding-top: 22px; }
+.nh-details h3 { font-size: 23px; margin-bottom: 16px; }
+.nh-details p, .nh-status { color: #bfbfbf; font-size: 16px; line-height: 1.8; }
+.nh-page .nh-status { max-width: 780px; margin-top: 30px; }
+.nh-close { border-top: 1px solid #303030; }
+.nh-links { display: flex; flex-wrap: wrap; gap: 22px 36px; margin-top: 34px; }
+.nh-links a { color: #7df9ff; line-height: 1.7; text-underline-offset: 6px; }
+.nh-page a:focus-visible, .website-project-card a:focus-visible { outline: 2px solid #7df9ff; outline-offset: 5px; }
+@media (max-width: 900px) {
+    .projects .website-project-card, .nh-page .nh-split, .nh-details { grid-template-columns: 1fr; }
+    .website-project-card .project-card-image { height: auto; }
+    .website-project-card .project-card-content h3 { font-size: 30px; }
+}

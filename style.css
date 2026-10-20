@@ -1,0 +1,3583 @@
+/* ==========================================================
+   STUDIO82 — MAIN STYLESHEET
+   ==========================================================
+   THIS FILE CONTROLS HOW THE WHOLE WEBSITE LOOKS.
+========================================================== */
+
+
+
+/* ==========================================================
+   1. RESET
+   ==========================================================
+   THIS REMOVES THE BROWSER'S DEFAULT SPACING.
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* ==========================================================
+   2. BASIC WEBSITE SETTINGS
+   ==========================================================
+   BACKGROUND, TEXT COLOR, FONT, SMOOTH SCROLLING.
+========================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+
+
+/* ==========================================================
+   3. CONTAINER
+   ==========================================================
+   THIS KEEPS CONTENT FROM TOUCHING THE SIDES OF THE SCREEN.
+========================================================== */
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+
+
+/* ==========================================================
+   4. HEADER
+   ==========================================================
+   THIS IS THE STUDIO82 LOGO + TOP MENU.
+========================================================== */
+
+header {
+    width: min(1200px, 92%);
+    height: 90px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* STUDIO82 LOGO */
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+
+/* TOP MENU */
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #7df9ff;
+}
+
+
+
+/* ==========================================================
+   5. LITTLE GRAY LABEL TEXT
+   ==========================================================
+   EXAMPLE:
+   "CREATIVE STUDIO — ATHENS, GEORGIA"
+   "FEATURED WORK"
+========================================================== */
+
+.eyebrow {
+    margin-bottom: 25px;
+
+    color: #9b9b9b;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+
+/* ==========================================================
+   6. HOMEPAGE HERO
+   ==========================================================
+   THIS IS THE BIG:
+   "DESIGNS THAT MOVE FORWARD."
+========================================================== */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    text-align: left;
+}
+
+.hero h1 {
+    max-width: 900px;
+    margin-bottom: 30px;
+
+    font-size: clamp(64px, 10vw, 150px);
+    line-height: 0.88;
+    letter-spacing: -5px;
+}
+
+.hero-copy {
+    max-width: 700px;
+    margin-bottom: 40px;
+
+    color: #bfbfbf;
+
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   7. HOMEPAGE BUTTONS
+   ==========================================================
+   PROJECTS + OUR PROCESS
+========================================================== */
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.button,
+button {
+    display: inline-block;
+
+    padding: 18px 42px;
+
+    background: white;
+    color: black;
+
+    border: none;
+
+    text-decoration: none;
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.button:hover,
+button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* DARK SECOND BUTTON */
+
+.secondary {
+    background: transparent;
+    color: white;
+
+    border: 1px solid #444;
+}
+
+.secondary:hover {
+    border-color: white;
+}
+
+
+
+/* ==========================================================
+   8. FEATURED WORK AREA
+   ==========================================================
+   THIS HOLDS:
+   EMBER + IMMERSA + MOTION
+========================================================== */
+
+.work {
+    padding: 120px 0;
+}
+
+
+
+/* ==========================================================
+   9. THE THREE PROJECT CARDS
+   ==========================================================
+   THIS BOX HOLDS ALL THREE CARDS.
+========================================================== */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-top: 40px;
+}
+
+
+
+/* ==========================================================
+   10. ONE PROJECT CARD
+   ==========================================================
+   ALL THREE PROJECTS USE THIS SAME CARD.
+========================================================== */
+
+.card {
+    background: #1b1b1b;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #262626;
+}
+
+.project-card {
+    padding: 0;
+}
+
+
+
+/* ==========================================================
+   11. TOP HALF OF PROJECT CARD
+   ==========================================================
+   THIS IS WHERE THE PROJECT PICTURE LIVES.
+========================================================== */
+
+.project-card-image {
+    position: relative;
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    background: #141414;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+/* IMAGE MOVES A LITTLE WHEN WE HOVER */
+
+.project-card:hover .project-card-image img {
+    transform: scale(1.04);
+    filter: brightness(0.88);
+}
+
+
+
+/* ==========================================================
+   12. BOTTOM HALF OF PROJECT CARD
+   ==========================================================
+   THIS IS WHERE THE PROJECT NAME + DESCRIPTION LIVE.
+========================================================== */
+
+.project-card-content {
+    padding: 34px 38px 40px;
+}
+
+.project-card-content h3 {
+    margin-bottom: 15px;
+
+    font-size: 30px;
+}
+
+.project-card-content p {
+    color: #9d9d9d;
+
+    line-height: 1.6;
+}
+
+
+
+/* ==========================================================
+   13. PROJECT CARD LINK
+   ==========================================================
+   EXAMPLE:
+   "EXPLORE CAMPAIGN →"
+========================================================== */
+
+.project-card-link {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding-bottom: 6px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid white;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-card-link:hover {
+    color: #7df9ff;
+    border-color: #7df9ff;
+}
+
+
+
+/* ==========================================================
+   14. EMBER CARD — SPECIAL IMAGE FIX
+   ==========================================================
+   IMPORTANT:
+   EMBER IS STILL THE SAME CARD AS THE OTHER TWO.
+
+   THIS ONLY FIXES THE BLUE BAG PNG BECAUSE THAT IMAGE HAS
+   TRANSPARENT EMPTY SPACE AROUND THE BAG.
+========================================================== */
+
+.ember-card-image {
+    background: #151515;
+}
+
+
+/* BLUE LIGHT BEHIND THE EMBER BAG */
+
+.ember-card-image::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 75%;
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(59, 130, 246, 0.35) 0%,
+        rgba(59, 130, 246, 0.12) 45%,
+        transparent 70%
+    );
+
+    filter: blur(25px);
+}
+
+
+/* EMBER LINK FILLS THE IMAGE BOX */
+
+.ember-card-image a {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* MAKE THE BAG FIT INSIDE THE SAME BOX */
+
+.ember-card-image img {
+    object-fit: contain;
+
+    transform: scale(1.55);
+}
+
+
+/* EMBER HOVER */
+
+.project-card:hover .ember-card-image img {
+    transform: scale(1.62);
+
+    filter: brightness(0.95);
+}
+
+
+
+/* ==========================================================
+   15. ABOUT PAGE
+   ==========================================================
+   EVERYTHING BELOW HERE CONTROLS ABOUT.HTML.
+========================================================== */
+
+.about-page {
+    overflow: hidden;
+}
+
+
+
+/* ==========================================================
+   16. ABOUT PAGE — BIG INTRO
+========================================================== */
+
+.about-hero {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 80px 0;
+}
+
+.about-hero h1 {
+    max-width: 1100px;
+    margin-inline: auto;
+    text-align: center;
+
+    font-size: clamp(70px, 10vw, 150px);
+    line-height: 0.86;
+    letter-spacing: -6px;
+}
+
+
+
+/* ==========================================================
+   17. ABOUT PAGE — INTRO WORDS
+========================================================== */
+
+.about-intro {
+    padding: 140px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+
+    gap: 100px;
+}
+
+.about-label {
+    color: #777;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.about-intro .about-label {
+    color: #7df9ff;
+}
+
+.about-copy {
+    max-width: 750px;
+}
+
+.about-copy p {
+    margin-bottom: 30px;
+
+    color: #aaa;
+
+    font-size: 21px;
+    line-height: 1.7;
+}
+
+.about-copy .about-lead {
+    color: white;
+
+    font-size: 32px;
+    line-height: 1.4;
+}
+
+
+
+/* ==========================================================
+   18. ABOUT PAGE — PHILOSOPHY
+========================================================== */
+
+.about-philosophy {
+    padding: 160px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.about-philosophy h2 {
+    max-width: 1000px;
+
+    font-size: clamp(50px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+
+
+/* ==========================================================
+   19. ABOUT PAGE — SERVICES
+========================================================== */
+
+.about-services {
+    padding: 85px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.service-list {
+    margin-top: 35px;
+}
+
+.service-row {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    align-items: center;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #333;
+}
+
+.service-row:last-child {
+    border-bottom: 1px solid #333;
+}
+
+.service-row span {
+    color: #666;
+
+    font-size: 13px;
+}
+
+.service-row h3 {
+    font-size: clamp(24px, 3.2vw, 42px);
+
+    font-weight: 500;
+}
+
+
+
+/* ==========================================================
+   20. ABOUT PAGE — CONTACT AREA
+========================================================== */
+
+.about-contact {
+    padding: 160px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.about-contact h2 {
+    margin-bottom: 50px;
+
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+.about-cta {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid white;
+
+    padding-bottom: 8px;
+}
+
+
+
+/* ==========================================================
+   21. END OF PAGE AREA
+   ==========================================================
+   THIS IS THE LARGE FINAL MESSAGE AT THE BOTTOM.
+========================================================== */
+
+.end-frame {
+    padding: 180px 0 70px;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.end-frame h2 {
+    max-width: 1000px;
+
+    margin: 40px 0;
+
+    font-size: clamp(70px, 10vw, 150px);
+    line-height: 0.86;
+    letter-spacing: -6px;
+}
+
+.end-link {
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid white;
+
+    transition: 0.3s;
+}
+
+.end-link:hover {
+    color: #7df9ff;
+    border-color: #7df9ff;
+}
+
+.end-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 140px;
+    padding-top: 40px;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.end-logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 6px;
+}
+
+.end-bottom nav {
+    display: flex;
+
+    gap: 40px;
+}
+
+.end-bottom nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.end-bottom nav a:hover {
+    color: #7df9ff;
+}
+
+
+
+/* ==========================================================
+   22. EMBER CASE STUDY PAGE
+   ==========================================================
+   EVERYTHING BELOW HERE CONTROLS EMBER.HTML.
+========================================================== */
+
+.project-page {
+    font-family: "Inter", sans-serif;
+}
+
+.project-page h1,
+.project-page h2,
+.project-page h3 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+
+/* ==========================================================
+   23. EMBER PAGE — BIG TITLE
+========================================================== */
+
+.project-hero {
+    padding: 100px 0 150px;
+}
+
+.project-hero h1 {
+    margin-bottom: 35px;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800;
+
+    font-size: clamp(110px, 13vw, 190px);
+    line-height: 0.76;
+    letter-spacing: -4px;
+}
+
+.project-intro {
+    max-width: 620px;
+
+    color: #999;
+
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+
+
+/* ==========================================================
+   24. EMBER PAGE — THE IDEA
+========================================================== */
+
+.project-story {
+    padding: 150px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.idea-grid {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 80px;
+}
+
+.idea-sidebar {
+    align-self: start;
+}
+
+.project-details {
+    margin-top: 70px;
+}
+
+.detail-item {
+    padding: 22px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.detail-item:last-child {
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.detail-item span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.detail-item p {
+    color: #bbb;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.idea-content h2 {
+    margin-bottom: 60px;
+
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: 0.94;
+    letter-spacing: -4px;
+}
+
+.idea-body {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 380px;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.idea-text p {
+    max-width: 620px;
+
+    margin-bottom: 30px;
+
+    color: #aaa;
+
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+
+
+/* ==========================================================
+   25. EMBER PAGE — STORY PICTURE
+========================================================== */
+
+.story-image {
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+.story-image img {
+    width: 100%;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.05);
+
+    filter: brightness(0.92);
+}
+
+
+
+/* ==========================================================
+   26. EMBER PAGE — BRAND SYSTEM
+========================================================== */
+
+.project-gallery {
+    padding: 170px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.project-gallery h2 {
+    max-width: 1000px;
+
+    margin: 25px 0 40px;
+
+    font-size: clamp(60px, 8vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.gallery-intro {
+    max-width: 700px;
+
+    color: #999;
+
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   27. EMBER PAGE — IDENTITY
+========================================================== */
+
+.identity-section {
+    padding: 170px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.identity-header {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 80px;
+
+    margin-bottom: 100px;
+}
+
+.identity-header h2 {
+    margin-bottom: 40px;
+
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.identity-intro {
+    max-width: 650px;
+
+    color: #999;
+
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   28. EMBER PAGE — COFFEE BAGS
+========================================================== */
+
+.identity-feature {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px;
+
+    margin-bottom: 100px;
+}
+
+.bag-card {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px;
+
+    background: transparent;
+
+    overflow: visible;
+
+    transition: transform 0.6s ease;
+}
+
+.bag-card img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 420px;
+
+    display: block;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.bag-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 65%;
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: 0.18;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.bag-blue::before {
+    background: #3b82f6;
+}
+
+.bag-original::before {
+    background: #ff6a2a;
+}
+
+.bag-card:hover {
+    transform: translateY(-8px);
+}
+
+.bag-card:hover img {
+    transform: scale(1.02);
+
+    filter: brightness(1.02);
+}
+
+.bag-card:hover::before {
+    opacity: 0.45;
+
+    transform: scale(1.15);
+}
+
+
+
+/* ==========================================================
+   29. EMBER PAGE — IDENTITY DETAILS
+========================================================== */
+
+.identity-split {
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.identity-image {
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+.identity-image img {
+    width: 100%;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+.identity-image:hover img {
+    transform: scale(1.04);
+
+    filter: brightness(0.92);
+}
+
+.identity-details {
+    max-width: 380px;
+}
+
+.identity-number {
+    margin-bottom: 30px;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.identity-details h3 {
+    margin-bottom: 35px;
+
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+}
+
+.identity-details > p:last-child {
+    color: #999;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   30. EMBER PAGE — THE VOICE
+========================================================== */
+
+.voice-section {
+    padding: 170px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.voice-header {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 80px;
+
+    margin-bottom: 100px;
+}
+
+.voice-header h2 {
+    margin-bottom: 35px;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 0.88;
+    letter-spacing: -3px;
+}
+
+.voice-intro {
+    max-width: 650px;
+
+    color: #999;
+
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   31. EMBER PAGE — FONT SHOWCASE
+========================================================== */
+
+.type-showcase {
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr;
+
+    gap: 80px;
+
+    padding-top: 60px;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.type-label {
+    margin-bottom: 35px;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.type-primary h3 {
+    margin-bottom: 45px;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(110px, 16vw, 230px);
+    font-weight: 800;
+
+    line-height: 0.75;
+    letter-spacing: -5px;
+}
+
+.type-alphabet {
+    color: #888;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 22px;
+    line-height: 1.8;
+    letter-spacing: 4px;
+}
+
+.type-secondary h4 {
+    margin-bottom: 30px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.type-secondary > p:last-child {
+    color: #999;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   32. EMBER PAGE — IN THE WILD
+========================================================== */
+
+.wild-section {
+    padding: 170px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.wild-header {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 80px;
+
+    margin-bottom: 100px;
+}
+
+.wild-header h2 {
+    margin-bottom: 35px;
+
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.wild-intro {
+    max-width: 650px;
+
+    color: #999;
+
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.wild-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+.wild-item {
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+.wild-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+.wild-item:hover img {
+    transform: scale(1.03);
+
+    filter: brightness(0.9);
+}
+
+.wild-large {
+    grid-row: auto;
+}
+
+
+
+/* ==========================================================
+   33. EMBER PAGE — CAMPAIGN FILM
+========================================================== */
+
+.project-film {
+    padding: 170px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.film-header {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+.film-header h2 {
+    font-size: clamp(60px, 8vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.film-header p {
+    max-width: 420px;
+
+    color: #999;
+
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.film-frame {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #181818;
+
+    border-radius: 20px;
+}
+
+.film-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #666;
+
+    border: 1px solid #2d2d2d;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+
+
+/* ==========================================================
+   34. EMBER PAGE — BACK TO PROJECTS
+========================================================== */
+
+.next-project {
+    padding: 140px 0;
+
+    border-top: 1px solid #2d2d2d;
+}
+
+.next-link {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: clamp(40px, 5vw, 70px);
+    letter-spacing: -2px;
+
+    transition: 0.3s;
+}
+
+.next-link:hover {
+    color: #7df9ff;
+
+    transform: translateX(-8px);
+}
+
+
+
+/* ==========================================================
+   35. TABLET / SMALL LAPTOP
+   ==========================================================
+   WHEN THE SCREEN GETS SMALLER THAN 900PX,
+   WE STACK THINGS INSTEAD OF SQUEEZING THEM.
+========================================================== */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+
+    header {
+        height: auto;
+
+        padding: 25px 0;
+
+        gap: 30px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* HOMEPAGE HERO */
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+
+    /* PROJECT CARDS */
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ABOUT PAGE */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .service-row {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .end-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 40px;
+    }
+
+    .end-bottom nav {
+        flex-wrap: wrap;
+    }
+
+
+    /* EMBER CASE STUDY */
+
+    .project-hero {
+        padding: 80px 0 110px;
+    }
+
+    .project-hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .idea-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .project-details {
+        margin-top: 30px;
+    }
+
+    .idea-body {
+        grid-template-columns: 1fr;
+    }
+
+    .story-image {
+        max-width: 520px;
+    }
+
+    .identity-section {
+        padding: 100px 0;
+    }
+
+    .identity-header {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 60px;
+    }
+
+    .identity-feature {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 60px;
+    }
+
+    .identity-split {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .voice-header {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .type-showcase {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .wild-header {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .wild-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wild-large {
+        grid-row: auto;
+    }
+
+    .film-header {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+
+/* ==========================================================
+   36. PHONE
+   ==========================================================
+   THESE RULES ONLY TURN ON FOR SMALL PHONE SCREENS.
+========================================================== */
+
+@media (max-width: 650px) {
+
+    /* HEADER */
+
+    header {
+        width: 90%;
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 22px;
+
+        letter-spacing: 6px;
+    }
+
+
+    /* HOMEPAGE HERO */
+
+    .hero h1 {
+        font-size: clamp(58px, 18vw, 95px);
+    }
+
+    .hero-copy {
+        font-size: 18px;
+    }
+
+    .button {
+        padding: 15px 25px;
+
+        font-size: 15px;
+    }
+
+
+    /* FEATURED WORK */
+
+    .work {
+        padding: 90px 0;
+    }
+
+    .project-card-content {
+        padding: 28px 25px 32px;
+    }
+
+
+    /* ABOUT PAGE */
+
+    .about-hero h1 {
+        letter-spacing: -4px;
+    }
+
+
+    /* EMBER CASE STUDY */
+
+    .project-hero h1 {
+        font-size: clamp(82px, 25vw, 130px);
+
+        letter-spacing: -3px;
+    }
+
+    .identity-feature {
+        gap: 20px;
+    }
+
+    .bag-card {
+        padding: 30px;
+    }
+
+    .type-alphabet {
+        font-size: 16px;
+        letter-spacing: 2px;
+
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+
+/* ==========================================================
+   HOMEPAGE CARD EFFECTS
+   ==========================================================
+   FUN STUFF HAPPENS HERE 😎
+========================================================== */
+
+
+/* -----------------------------------------
+   ALL 3 CARDS MOVE SMOOTHLY
+----------------------------------------- */
+
+.project-card {
+    position: relative;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        background 0.4s ease;
+}
+
+
+/* -----------------------------------------
+   WHEN WE ENTER THE PROJECT AREA,
+   QUIET DOWN ALL THE CARDS
+----------------------------------------- */
+
+.projects:hover .project-card {
+    opacity: 0.45;
+    transform: scale(0.98);
+}
+
+
+/* -----------------------------------------
+   BUT KEEP THE CARD WE ARE TOUCHING BRIGHT
+----------------------------------------- */
+
+.projects .project-card:hover {
+    opacity: 1;
+    transform: translateY(-8px) scale(1);
+}
+
+
+/* -----------------------------------------
+   PROJECT NAME MOVES A LITTLE
+----------------------------------------- */
+
+.project-card-content h3 {
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease;
+}
+
+
+.project-card:hover .project-card-content h3 {
+    transform: translateX(8px);
+    color: #ffffff;
+}
+
+
+
+/* ==========================================================
+   EMBER EFFECT
+   CARD NUMBER 1
+   ==========================================================
+   MAKE THE BLUE BAG FEEL LIKE IT IS GLOWING.
+========================================================== */
+
+.projects .project-card:nth-child(1) .ember-card-image::before {
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease;
+
+    opacity: 0.6;
+}
+
+
+.projects .project-card:nth-child(1):hover .ember-card-image::before {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.2);
+}
+
+
+
+/* ==========================================================
+   IMMERSA EFFECT
+   CARD NUMBER 2
+   ==========================================================
+   MAKE THE IMAGE FEEL LIKE IT LOST GRAVITY.
+========================================================== */
+
+.projects .project-card:nth-child(2):hover img {
+    transform:
+        scale(1.06)
+        translateY(-8px);
+}
+
+
+
+/* ==========================================================
+   MOTION EFFECT
+   CARD NUMBER 3
+   ==========================================================
+   ADD A SOFT LIGHT THAT PASSES ACROSS THE IMAGE.
+========================================================== */
+
+.projects .project-card:nth-child(3) .project-card-image::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.8s ease;
+
+    pointer-events: none;
+}
+
+
+.projects .project-card:nth-child(3):hover .project-card-image::after {
+    left: 140%;
+}
+
+
+/* ==========================================================
+   STUDIO82 — HOMEPAGE V2
+   BUSINESS / LAUNCH VERSION
+
+   PASTE THIS ENTIRE SECTION AT THE VERY BOTTOM OF STYLE.CSS
+========================================================== */
+
+
+/* ==========================================================
+   01. HOMEPAGE FOUNDATION
+========================================================== */
+
+body {
+    background:
+        radial-gradient(
+            circle at 78% 8%,
+            rgba(125, 249, 255, 0.035),
+            transparent 30%
+        ),
+        #0f0f0f;
+}
+
+
+/* Make homepage sections feel connected */
+
+.hero,
+.studio-intro,
+.services,
+.work,
+.home-cta {
+    position: relative;
+}
+
+
+/* ==========================================================
+   02. HEADER POLISH
+========================================================== */
+
+header {
+    position: relative;
+    z-index: 100;
+}
+
+header .logo {
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+header .logo:hover {
+    color: #7df9ff;
+    letter-spacing: 9px;
+}
+
+
+/* ==========================================================
+   03. NEW HERO
+========================================================== */
+
+.hero {
+    min-height: calc(100vh - 90px);
+
+    padding:
+        80px
+        0
+        110px;
+
+    border-bottom:
+        1px solid
+        #252525;
+}
+
+
+.hero .container {
+    position: relative;
+}
+
+
+/* -----------------------------------------
+   HUGE MAIN MESSAGE
+----------------------------------------- */
+
+.hero h1 {
+    max-width: 1000px;
+
+    margin-bottom: 38px;
+
+    font-size:
+        clamp(
+            72px,
+            11vw,
+            160px
+        );
+
+    line-height: 0.82;
+
+    letter-spacing: -7px;
+
+    font-weight: 700;
+}
+
+
+/* -----------------------------------------
+   HERO DESCRIPTION
+----------------------------------------- */
+
+.hero-copy {
+    max-width: 690px;
+
+    margin-bottom: 22px;
+
+    color: #b9b9b9;
+
+    font-size: 22px;
+    line-height: 1.65;
+}
+
+
+/* -----------------------------------------
+   BRANDING / ADS / WEB / MOTION
+----------------------------------------- */
+
+.hero-services {
+    margin-bottom: 44px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* -----------------------------------------
+   HERO BUTTONS
+----------------------------------------- */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+}
+
+
+.hero .button {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.hero .button:first-child {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+.hero .button:first-child:hover {
+    background: #7df9ff;
+}
+
+
+/* ==========================================================
+   04. STUDIO INTRO
+========================================================== */
+
+.studio-intro {
+    padding:
+        150px
+        0;
+
+    border-bottom:
+        1px solid
+        #252525;
+}
+
+
+.studio-intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, 0.8fr);
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+/* BIG STATEMENT */
+
+.studio-intro h2 {
+    max-width: 720px;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            82px
+        );
+
+    line-height: 0.96;
+
+    letter-spacing: -4px;
+
+    font-weight: 600;
+}
+
+
+.studio-intro h2 span {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #777;
+}
+
+
+/* RIGHT SIDE COPY */
+
+.studio-intro-copy {
+    padding-top: 10px;
+}
+
+
+.studio-intro-copy p {
+    margin-bottom: 28px;
+
+    color: #a9a9a9;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+
+.studio-intro-copy p:first-child {
+    color: #dedede;
+}
+
+
+
+/* ==========================================================
+   05. SERVICES
+========================================================== */
+
+.hero h1 .hero-moves {
+    display: inline-block;
+    transform-origin: center bottom;
+    animation: hero-moves-glide 4s ease-in-out infinite;
+}
+
+@keyframes hero-moves-glide {
+    0%, 15%, 65%, 100% { transform: translateX(0) skewX(0deg); }
+    32% { transform: translateX(0.055em) skewX(-4deg); }
+    48% { transform: translateX(-0.018em) skewX(1.5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero h1 .hero-moves { animation: none; }
+}
+
+header > a.logo,
+.hero > .container > .eyebrow,
+.studio-intro > .container > .eyebrow,
+.services > .container > .eyebrow {
+    color: #7df9ff;
+}
+
+.services {
+    padding:
+        160px
+        0;
+
+    border-bottom:
+        1px solid
+        #252525;
+}
+
+
+/* -----------------------------------------
+   SERVICES INTRO
+----------------------------------------- */
+
+.services-heading {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    gap: 100px;
+
+    align-items: end;
+
+    margin-bottom: 85px;
+}
+
+
+.services-heading h2 {
+    font-size:
+        clamp(
+            65px,
+            8vw,
+            110px
+        );
+
+    line-height: 0.82;
+
+    letter-spacing: -6px;
+
+    font-weight: 650;
+}
+
+
+.services-heading > p {
+    max-width: 480px;
+
+    padding-bottom: 10px;
+
+    color: #999;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   06. BUILD / LAUNCH / GROW CARDS
+========================================================== */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 20px;
+}
+
+
+.service-card {
+    position: relative;
+
+    min-height: 570px;
+
+    padding:
+        38px
+        36px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #151515
+        );
+
+    border:
+        1px solid
+        #292929;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+
+/* TINY LIGHT GLOW */
+
+.service-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    top: -120px;
+
+    right: -100px;
+
+    border-radius: 50%;
+
+    background:
+        #7df9ff;
+
+    filter:
+        blur(80px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+/* HOVER */
+
+.service-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        #414141;
+
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #171717
+        );
+}
+
+
+.service-card:hover::before {
+    opacity: 0.08;
+}
+
+
+/* Blue outlines animate only while a service card is hovered. */
+@property --service-border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: conic-gradient(
+        from var(--service-border-angle),
+        rgba(125, 249, 255, 0.12) 0deg,
+        rgba(125, 249, 255, 0.12) 230deg,
+        #7df9ff 300deg,
+        rgba(125, 249, 255, 0.12) 360deg
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+    animation: service-border-orbit 5s linear infinite;
+}
+
+@keyframes service-border-orbit {
+    to { --service-border-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card:hover::after {
+        animation: none;
+        background: #7df9ff;
+        opacity: 0.65;
+    }
+}
+
+/* NUMBER */
+
+.service-number {
+    margin-bottom: 70px;
+
+    color: #555;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* BUILD / LAUNCH / GROW */
+
+.service-label {
+    margin-bottom: 20px;
+
+    color: #7df9ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* SERVICE TITLE */
+
+.service-card h3 {
+    margin-bottom: 22px;
+
+    font-size:
+        clamp(
+            30px,
+            3vw,
+            42px
+        );
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+/* DESCRIPTION */
+
+.service-card > p:not(.service-label) {
+    margin-bottom: 34px;
+
+    color: #999;
+
+    line-height: 1.7;
+}
+
+
+/* LIST */
+
+.service-card ul {
+    margin-bottom: 40px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.service-card li {
+    padding:
+        12px
+        0;
+
+    color: #b6b6b6;
+
+    font-size: 14px;
+
+    border-top:
+        1px solid
+        #303030;
+}
+
+
+.service-card li:last-child {
+    border-bottom:
+        1px solid
+        #303030;
+}
+
+
+/* BOTTOM LINK */
+
+.service-card > a {
+    margin-top: auto;
+
+    align-self: flex-start;
+
+    padding-bottom: 6px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    border-bottom:
+        1px solid
+        #777;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.service-card > a:hover {
+    color: #7df9ff;
+
+    border-color: #7df9ff;
+
+    transform:
+        translateX(5px);
+}
+
+
+
+/* ==========================================================
+   07. SELECTED WORK HEADING
+========================================================== */
+
+.work {
+    padding:
+        160px
+        0;
+}
+
+
+.work-heading {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr;
+
+    align-items: end;
+
+    gap: 80px;
+
+    margin-bottom: 75px;
+}
+
+
+.work-heading h2 {
+    max-width: 700px;
+
+    font-size:
+        clamp(
+            54px,
+            7vw,
+            95px
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+
+.work-heading > p {
+    max-width: 420px;
+
+    padding-bottom: 8px;
+
+    color: #8e8e8e;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   08. PROJECT CARD NEW DETAILS
+========================================================== */
+
+.project-type {
+    margin-bottom: 14px;
+
+    color: #666 !important;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.project-card-content h3 {
+    font-size: 34px;
+}
+
+
+/* Make cards slightly taller / stronger */
+
+.project-card {
+    min-height: 520px;
+}
+
+
+.project-card-content {
+    min-height: 230px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.project-card-link {
+    margin-top: auto;
+
+    align-self: flex-start;
+}
+
+
+
+/* ==========================================================
+   09. FINAL CALL TO ACTION
+========================================================== */
+
+.home-cta {
+    padding:
+        170px
+        0
+        190px;
+
+    border-top:
+        1px solid
+        #252525;
+}
+
+
+.home-cta .container {
+    position: relative;
+}
+
+
+.home-cta h2 {
+    max-width: 960px;
+
+    margin-bottom: 38px;
+
+    font-size:
+        clamp(
+            68px,
+            9vw,
+            130px
+        );
+
+    line-height: 0.86;
+
+    letter-spacing: -6px;
+}
+
+
+.home-cta > .container > p:not(.eyebrow) {
+    max-width: 620px;
+
+    margin-bottom: 45px;
+
+    color: #999;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   10. HOMEPAGE FOOTER
+========================================================== */
+
+.site-footer {
+    padding:
+        60px
+        0;
+
+    border-top:
+        1px solid
+        #252525;
+}
+
+
+.footer-layout {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+
+.footer-brand p {
+    margin-top: 18px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    gap: 32px;
+}
+
+
+.footer-links a {
+    color: #999;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: #7df9ff;
+}
+
+
+.footer-copy {
+    grid-column:
+        1 / -1;
+
+    padding-top: 35px;
+
+    margin-top: 20px;
+
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    border-top:
+        1px solid
+        #222;
+}
+
+
+
+/* ==========================================================
+   11. TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+
+    /* STUDIO INTRO */
+
+    .studio-intro-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 55px;
+    }
+
+
+    /* SERVICES HEADER */
+
+    .services-heading {
+        grid-template-columns:
+            1fr;
+
+        gap: 45px;
+    }
+
+
+    /* SERVICE CARDS */
+
+    .service-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .service-card {
+        min-height: auto;
+    }
+
+
+    .service-number {
+        margin-bottom: 45px;
+    }
+
+
+    /* WORK */
+
+    .work-heading {
+        grid-template-columns:
+            1fr;
+
+        gap: 35px;
+    }
+
+}
+
+
+
+/* ==========================================================
+   12. MOBILE
+========================================================== */
+
+@media (max-width: 650px) {
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            95px
+            0
+            110px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            clamp(
+                62px,
+                19vw,
+                95px
+            );
+
+        letter-spacing: -4px;
+    }
+
+
+    .hero-copy {
+        font-size: 18px;
+    }
+
+
+    .hero-services {
+        line-height: 1.8;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    /* INTRO */
+
+    .studio-intro {
+        padding:
+            100px
+            0;
+    }
+
+
+    .studio-intro h2 {
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+
+    /* SERVICES */
+
+    .services {
+        padding:
+            110px
+            0;
+    }
+
+
+    .services-heading h2 {
+        font-size: 67px;
+
+        letter-spacing: -4px;
+    }
+
+
+    .service-card {
+        padding:
+            32px
+            26px;
+    }
+
+
+    /* WORK */
+
+    .work {
+        padding:
+            110px
+            0;
+    }
+
+
+    .work-heading h2 {
+        font-size: 56px;
+
+        letter-spacing: -3px;
+    }
+
+
+    /* CTA */
+
+    .home-cta {
+        padding:
+            120px
+            0;
+    }
+
+
+    .home-cta h2 {
+        font-size: 62px;
+
+        letter-spacing: -4px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-layout {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        gap:
+            20px
+            28px;
+    }
+
+
+    .footer-copy {
+        grid-column: auto;
+    }
+
+}
+
+
+
+/* ==========================================================
+   STUDIO82 — CONTACT PAGE
+========================================================== */
+
+
+/* ==========================================================
+   01. CONTACT HERO
+========================================================== */
+
+.contact-page {
+    overflow: hidden;
+}
+
+.contact-hero {
+    min-height: 72vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding:
+        90px
+        0
+        110px;
+
+    border-bottom:
+        1px solid
+        #252525;
+}
+
+.contact-hero h1 {
+    max-width: 1000px;
+
+    margin-bottom: 36px;
+
+    font-size:
+        clamp(
+            76px,
+            11vw,
+            155px
+        );
+
+    line-height: 0.84;
+
+    letter-spacing: -7px;
+}
+
+.contact-intro {
+    max-width: 720px;
+
+    color: #aaa;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   02. CONTACT FORM SECTION
+========================================================== */
+
+.contact-form-section {
+    padding:
+        150px
+        0
+        170px;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    gap: 120px;
+
+    align-items: start;
+}
+
+
+/* ==========================================================
+   03. LEFT SIDE
+========================================================== */
+
+.contact-side {
+    position: sticky;
+
+    top: 60px;
+}
+
+.contact-side h2 {
+    max-width: 460px;
+
+    margin-bottom: 30px;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            68px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+.contact-side > p:not(.eyebrow) {
+    max-width: 460px;
+
+    color: #999;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+.contact-details {
+    margin-top: 65px;
+
+    border-top:
+        1px solid
+        #2c2c2c;
+}
+
+.contact-details div {
+    padding:
+        24px
+        0;
+
+    border-bottom:
+        1px solid
+        #2c2c2c;
+}
+
+.contact-details span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #666;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.contact-details p {
+    color: #d5d5d5;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   04. FORM
+========================================================== */
+
+.project-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 38px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.form-group > label {
+    color: #b7b7b7;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   05. TEXT FIELDS
+========================================================== */
+
+.project-form input[type="text"],
+.project-form input[type="email"],
+.project-form select,
+.project-form textarea {
+    width: 100%;
+
+    padding:
+        18px
+        0;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    border-bottom:
+        1px solid
+        #343434;
+
+    border-radius: 0;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease;
+}
+
+.project-form input::placeholder,
+.project-form textarea::placeholder {
+    color: #595959;
+}
+
+.project-form input:focus,
+.project-form select:focus,
+.project-form textarea:focus {
+    border-color:
+        #7df9ff;
+}
+
+.project-form textarea {
+    resize: vertical;
+
+    min-height: 160px;
+}
+
+
+/* ==========================================================
+   06. SELECT MENU
+========================================================== */
+
+.project-form select {
+    cursor: pointer;
+
+    color-scheme: dark;
+}
+
+.project-form option {
+    background:
+        #141414;
+
+    color: white;
+}
+
+
+/* ==========================================================
+   07. PROJECT TYPE OPTIONS
+========================================================== */
+
+.project-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 14px;
+}
+
+.project-option {
+    position: relative;
+
+    cursor: pointer;
+}
+
+.project-option input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.project-option span {
+    min-height: 125px;
+
+    padding: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    color: #888;
+
+    background:
+        #171717;
+
+    border:
+        1px solid
+        #2d2d2d;
+
+    border-radius: 14px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.project-option strong {
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+.project-option:hover span {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #4a4a4a;
+}
+
+.project-option input:checked + span {
+    color: #d5d5d5;
+
+    background:
+        #1e1e1e;
+
+    border-color:
+        #7df9ff;
+
+    box-shadow:
+        0
+        0
+        0
+        1px
+        rgba(
+            125,
+            249,
+            255,
+            0.12
+        );
+}
+
+.project-option input:checked + span strong {
+    color:
+        #7df9ff;
+}
+
+
+/* ==========================================================
+   08. SUBMIT BUTTON
+========================================================== */
+
+.contact-submit {
+    align-self: flex-start;
+
+    margin-top: 15px;
+
+    padding:
+        19px
+        34px;
+
+    background:
+        white;
+
+    color:
+        #111;
+
+    border: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.contact-submit:hover {
+    transform:
+        translateY(-4px);
+
+    background:
+        #7df9ff;
+}
+
+
+/* ==========================================================
+   09. NOTE UNDER BUTTON
+========================================================== */
+
+.form-note {
+    max-width: 520px;
+
+    color:
+        #555;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   10. TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .contact-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 80px;
+    }
+
+    .contact-side {
+        position: static;
+    }
+
+}
+
+
+/* ==========================================================
+   11. MOBILE
+========================================================== */
+
+@media (max-width: 650px) {
+
+    .contact-hero {
+        min-height: auto;
+
+        padding:
+            90px
+            0;
+    }
+
+    .contact-hero h1 {
+        font-size:
+            clamp(
+                64px,
+                20vw,
+                95px
+            );
+
+        letter-spacing:
+            -4px;
+    }
+
+    .contact-intro {
+        font-size:
+            18px;
+    }
+
+    .contact-form-section {
+        padding:
+            100px
+            0
+            120px;
+    }
+
+    .contact-grid {
+        gap:
+            65px;
+    }
+
+    .contact-side h2 {
+        font-size:
+            48px;
+    }
+
+    .project-options {
+        grid-template-columns:
+            1fr;
+    }
+
+    .project-option span {
+        min-height:
+            110px;
+    }
+
+    .contact-submit {
+        width:
+            100%;
+    }
+
+}
+
+/* EMBER case-study presentation matches the Studio82 homepage. */
+.ember-page .project-page,
+.ember-page .project-page h1,
+.ember-page .project-page h2,
+.ember-page .project-page h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ember-page .project-page h1,
+.ember-page .project-page h2,
+.ember-page .project-page h3 {
+    font-weight: 700;
+    text-transform: none;
+    line-height: 1;
+}
+
+.ember-page .project-page h2 {
+    font-size: clamp(40px, 6vw, 88px);
+    letter-spacing: -0.045em;
+}
+
+.ember-page .eyebrow,
+.ember-page .type-label,
+.ember-page .identity-number {
+    color: #7df9ff;
+}
+
+/* Preserve the actual brand type specimens documented in the case study. */
+.ember-page .type-primary h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800;
+    line-height: 0.75;
+}
+
+/* Floating packaging with a soft, breathing light behind each bag. */
+.ember-page .bag-card {
+    isolation: isolate;
+    --bag-light: #7df9ff;
+}
+
+.ember-page .bag-original { --bag-light: #ff6a2a; }
+
+.ember-page .bag-card img {
+    animation: ember-bag-float 6s ease-in-out infinite;
+    filter: drop-shadow(0 18px 18px rgba(0, 0, 0, 0.45));
+}
+
+.ember-page .bag-card::before {
+    background: radial-gradient(circle, var(--bag-light) 0%, transparent 70%);
+    width: 90%;
+    filter: blur(35px);
+    pointer-events: none;
+    animation: ember-bag-glow 6s ease-in-out infinite;
+}
+
+.ember-page .bag-original img,
+.ember-page .bag-original::before { animation-delay: -3s; }
+
+@keyframes ember-bag-float {
+    0%, 100% { transform: translateY(4px) rotate(-1deg); }
+    50% { transform: translateY(-14px) rotate(1deg); }
+}
+
+@keyframes ember-bag-glow {
+    0%, 100% { opacity: 0.22; transform: scale(0.9); }
+    50% { opacity: 0.5; transform: scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ember-page .bag-card img,
+    .ember-page .bag-card::before { animation: none; }
+    .ember-page .bag-card::before { opacity: 0.3; }
+}
+
+/* A warm light around the About page's bright idea. */
+.ideas-glow {
+    color: #fff9d6;
+    text-shadow:
+        0 0 10px rgba(255, 235, 145, 0.45),
+        0 0 28px rgba(255, 225, 115, 0.3),
+        0 0 60px rgba(255, 220, 100, 0.18);
+}
+
+.about-copy .about-audience-lead {
+    font-size: clamp(48px, 4.21875vw, 81px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    text-align: left;
+    text-wrap: balance;
+}
+
+/* About-page accents and a single-line second headline. */
+.about-site-page .about-services .eyebrow,
+.about-site-page .about-philosophy .eyebrow,
+.about-site-page .about-contact .eyebrow,
+.about-site-page .service-row > span,
+.about-site-page .footer-brand > p,
+.about-site-page .footer-links > a {
+    color: #7df9ff;
+}
+
+.about-hero h1 .design-second-line {
+    display: inline-block;
+    font-size: clamp(24px, 6vw, 112px);
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    white-space: nowrap;
+}
+
+/* Keep the homepage headline on two deliberate, responsive lines. */
+.hero h1 {
+    max-width: 1100px;
+    font-size: clamp(28px, 10vw, 150px);
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+}
+
+.hero h1 .hero-headline-line {
+    display: block;
+    white-space: nowrap;
+}
+
+/* Align the supporting copy with the headings above each card group. */
+.services-heading { align-items: start; }
+.contact-hero .eyebrow { color: #7df9ff; }
+
+@media (min-width: 1001px) {
+    .work-heading {
+        align-items: start;
+        row-gap: 0;
+    }
+    .work-heading > div { display: contents; }
+    .work-heading .eyebrow { grid-column: 1; grid-row: 1; }
+    .work-heading h2 { grid-column: 1; grid-row: 2; }
+    .work-heading > p { grid-column: 2; grid-row: 2; }
+}
+
+/* A pointer-following light stays clipped inside each service card. */
+.service-card::before {
+    inset: 0;
+    width: auto;
+    height: auto;
+    border-radius: inherit;
+    background: radial-gradient(320px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(125, 249, 255, 0.19), rgba(125, 249, 255, 0.05) 45%, transparent 75%);
+    filter: none;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.25s ease;
+}
+.service-card > * { position: relative; z-index: 1; }
+.service-card:hover::before { opacity: 1; }
+.service-card::after { z-index: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card::before { transition: none; }
+}
+
+/* Contact submission confirmation */
+.contact-page [hidden] { display: none !important; }
+.contact-success { min-height: 75vh; padding: clamp(90px, 12vw, 160px) 0; }
+.contact-success .eyebrow { color: #7df9ff; margin-bottom: 28px; }
+.contact-success h1 { font-size: clamp(46px, 8vw, 112px); line-height: .98; letter-spacing: -.045em; margin: 0 0 34px; }
+.contact-success h1:focus { outline: none; }
+.success-copy { max-width: 620px; font-size: clamp(18px, 2vw, 22px); line-height: 1.65; color: #b9b9b9; }
+.success-links { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; margin-top: 42px; }
+.contact-success .button { background: #7df9ff; color: #101010; }
+.success-home { color: #7df9ff; text-underline-offset: 6px; }
+.project-form .form-error { color: #ffd0b8; line-height: 1.6; border-left: 2px solid #ffd0b8; padding: 12px 16px; }
+.contact-submit:disabled { opacity: .65; cursor: wait; transform: none; }
+
+/* Refined EMBER packaging and concept photography */
+.ember-packaging-feature { margin: 65px 0; overflow: hidden; border-radius: 18px; }
+.ember-packaging-feature img { display: block; width: 100%; height: auto; }
+.ember-page .wild-item { aspect-ratio: 3 / 2; }
+.ember-page .wild-item img { object-fit: contain; }
+
+/* Updated EMBER typography direction: clean weight and open spacing. */
+.ember-page .project-page .type-primary h3 {
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+    font-size: clamp(58px, 9vw, 132px);
+    font-weight: 900;
+    letter-spacing: .025em;
+    line-height: 1.05;
+    color: #eee9dd;
+    margin-bottom: 32px;
+}
+.ember-page .type-alphabet {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    line-height: 2;
+    color: #d9672b;
+}
+.ember-page .type-secondary h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(17px, 2vw, 24px);
+    font-weight: 500;
+    letter-spacing: .15em;
+    line-height: 1.6;
+    color: #eee9dd;
+}
+.ember-page .type-showcase > div { min-width: 0; }
